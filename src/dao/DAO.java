@@ -9,8 +9,7 @@ import javax.persistence.Persistence;
 
 public interface DAO<T> {
 	default public EntityManager getEntityManager() {
-		EntityManagerFactory factory = Persistence
-				.createEntityManagerFactory("jpa-exemplos");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("atividade");
 		EntityManager entityManager = factory.createEntityManager();
 		return entityManager;
 	}

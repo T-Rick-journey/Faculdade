@@ -12,7 +12,7 @@ public class TesteConexaoJPA {
 
 	public static void main(String[] args) {
 		EntityManager entityMgr = Persistence
-        		.createEntityManagerFactory("jpa-exemplos")
+        		.createEntityManagerFactory("atividade")
         		.createEntityManager();
 		System.out.println("Ok Conexao ----- JPA");
 		

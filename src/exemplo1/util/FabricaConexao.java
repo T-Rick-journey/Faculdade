@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
 public class FabricaConexao {
-	private static final String UNIDADE_PERSISTENCIA = "jpa-exemplos";
+	private static final String UNIDADE_PERSISTENCIA = "atividade";
 
 	public static EntityManager getConexao() {
 	   return	Persistence

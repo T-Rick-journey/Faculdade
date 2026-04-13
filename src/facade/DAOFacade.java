@@ -13,7 +13,7 @@ public class DAOFacade<T> {
 	public DAOFacade(Class<T> entityClass) {
 		this.entityClass = entityClass;
 		EntityManagerFactory factory = Persistence.
-				createEntityManagerFactory("jpa-exemplos");
+				createEntityManagerFactory("atividade");
 		EntityManager entityManager = factory.createEntityManager();
 		this.em = entityManager;
 	}
