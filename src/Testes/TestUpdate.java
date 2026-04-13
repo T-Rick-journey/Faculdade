@@ -9,7 +9,7 @@ import entity.Emprestimo;
 public class TestUpdate{
 
     public static void main(String[] args){
-        Emprestimo emprestimo = TestInsertEmprestimo.testaInsert(Date.from(LocalDateTime.now().atZone(java.time.ZoneId.systemDefault()).toInstant()),
+        Emprestimo emprestimo = TestInsertEmprestimo.testInsert(Date.from(LocalDateTime.now().atZone(java.time.ZoneId.systemDefault()).toInstant()),
                    Date.from(LocalDateTime.now().plusWeeks(2).atZone(java.time.ZoneId.systemDefault()).toInstant()));
         testUpdate(emprestimo.getId());
     }

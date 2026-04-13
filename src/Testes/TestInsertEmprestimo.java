@@ -9,11 +9,11 @@ import entity.Emprestimo;
 public class TestInsertEmprestimo {
 
     public static void main(String[] args) {
-        testaInsert(Date.from(LocalDateTime.now().atZone(java.time.ZoneId.systemDefault()).toInstant()),
+        testInsert(Date.from(LocalDateTime.now().atZone(java.time.ZoneId.systemDefault()).toInstant()),
                    Date.from(LocalDateTime.now().plusWeeks(2).atZone(java.time.ZoneId.systemDefault()).toInstant()));
     }
 
-    public static Emprestimo testaInsert(Date dataEmprestimo, Date dataDevolucao) {
+    public static Emprestimo testInsert(Date dataEmprestimo, Date dataDevolucao) {
         try {
             EmprestimosDao emprestimoDao = new EmprestimosDao();
 

@@ -10,7 +10,7 @@ import Testes.TestInsertEmprestimo;
 public class TestDelete {
 
     public static void main(String[] args) {
-        Emprestimo emprestimo = TestInsertEmprestimo.testaInsert(
+        Emprestimo emprestimo = TestInsertEmprestimo.testInsert(
             Date.from(LocalDateTime.now().atZone(java.time.ZoneId.systemDefault()).toInstant()),
             Date.from(LocalDateTime.now().plusWeeks(2).atZone(java.time.ZoneId.systemDefault()).toInstant())
         );
@@ -24,7 +24,7 @@ public class TestDelete {
 
             if (emprestimo != null) {
                 emprestimosDao.delete(emprestimo);
-                System.out.println("  Empréstimo ID " + id + " deletado");
+                System.out.println("Empréstimo ID " + id + " deletado");
             } else {
                 System.out.println("Empréstimo de ID " + id + " não encontrado");
             }

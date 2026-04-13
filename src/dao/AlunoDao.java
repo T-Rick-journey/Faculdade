@@ -7,7 +7,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.criteria.CriteriaQuery;
 
 import entity.Aluno;
-import exemplo1.entidades.Cliente;
 
 public class AlunoDao implements DAO<Aluno> {
 
