@@ -31,11 +31,11 @@ public class Emprestimo {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataEmprestimo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_aluno")
     private Aluno aluno;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_publicacao")
     private Publicacao publicacao;
 

@@ -13,7 +13,7 @@ public class TestInsertEmprestimo {
                    Date.from(LocalDateTime.now().plusWeeks(2).atZone(java.time.ZoneId.systemDefault()).toInstant()));
     }
 
-    private static void testaInsert(Date dataEmprestimo, Date dataDevolucao) {
+    public static Emprestimo testaInsert(Date dataEmprestimo, Date dataDevolucao) {
         try {
             EmprestimosDao emprestimoDao = new EmprestimosDao();
 
@@ -22,20 +22,21 @@ public class TestInsertEmprestimo {
                     dataDevolucao,
                     dataEmprestimo,
                     TestUtil.buscarAlunoPorId(1L),
-                    TestUtil.buscarPublicacaoPorId(1L)
+                    TestUtil.buscarPublicacaoPorId(2L)
             );
 
             emprestimoDao.insert(emprestimo);
-            System.out.println(
-                          "ID: " + emprestimo.getId()
-                        + " || Empréstimo: " + TestUtil.formatarData(emprestimo.getDataEmprestimo())
-                        + " || Devolução: " + TestUtil.formatarData(emprestimo.getDataDevolucao())
-                        + " || Aluno: " + (emprestimo.getAluno() != null ? emprestimo.getAluno().getNome() : "N/A")
-                        + " || Publicação: " + (emprestimo.getPublicacao() != null ? emprestimo.getPublicacao().getTitulo() : "N/A"));
+            System.out.println("ID: " + emprestimo.getId());
+            System.out.println("Empréstimo: " + TestUtil.formatarData(emprestimo.getDataEmprestimo()));
+            System.out.println("Devolução: " + TestUtil.formatarData(emprestimo.getDataDevolucao()));
+            System.out.println("Aluno: " + (emprestimo.getAluno() != null ? emprestimo.getAluno().getNome() : "N/A"));
+            System.out.println("Publicação: " + (emprestimo.getPublicacao() != null ? emprestimo.getPublicacao().getTitulo() : "N/A"));
 
+            return emprestimo;
         } catch (Exception e) {
             System.err.println("Erro no empréstimo: " + e.getMessage());
             e.printStackTrace();
+            return null;
         }
     }
 }
