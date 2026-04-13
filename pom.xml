@@ -32,6 +32,8 @@
 				<directory>src</directory>
 				<excludes>
 					<exclude>**/*.java</exclude>
+					<exclude>**/*.mv.db</exclude>
+					<exclude>**/*.trace.db</exclude>
 				</excludes>
 			</resource>
 		</resources>
