@@ -48,5 +48,11 @@ public class EmprestimosDao implements DAO<Emprestimo> {
         em.remove(Emprestimo);
         transaction.commit();
     }
+
+    public List<Emprestimo> findByNomeAluno(String nomeAluno) {
+        return em.createQuery("SELECT e FROM Emprestimo e WHERE LOWER(e.aluno.nome) LIKE LOWER(:nomeAluno)", Emprestimo.class)
+                .setParameter("nomeAluno", "%" + nomeAluno + "%")
+                .getResultList();
+    }
     
 }

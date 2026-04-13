@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_publicacao")
+@Table(name = "tb_publicacoes")
 public class Publicacao {
     
     @Id
@@ -19,7 +19,7 @@ public class Publicacao {
     private Long id;
 
     @Column(name = "codigoPublicacao")
-    private Integer codigoPublicacao;
+    private String codigoPublicacao;
 
     @Column(name = "titulo")
     private String titulo;
@@ -37,7 +37,7 @@ public class Publicacao {
 
     public Publicacao(){}
 
-    public Publicacao(Long id, Integer codigoPublicacao, String titulo, Integer ano, String autor, String tipo) {
+    public Publicacao(Long id, String codigoPublicacao, String titulo, Integer ano, String autor, String tipo) {
         this.id = id;
         this.codigoPublicacao = codigoPublicacao;
         this.titulo = titulo;
@@ -54,11 +54,11 @@ public class Publicacao {
         this.id = id;
     }
 
-    public Integer getCodigoPublicacao() {
+    public String getCodigoPublicacao() {
         return codigoPublicacao;
     }
 
-    public void setCodigoPublicacao(Integer codigoPublicacao) {
+    public void setCodigoPublicacao(String codigoPublicacao) {
         this.codigoPublicacao = codigoPublicacao;
     }
 
