@@ -3,6 +3,7 @@ Repositório para salvar atividades relacionadas a minha faculdade
 
 ## Atividade 1ª avaliação critérios
 O arquivo de banco de dados utilizado para desenvolver este projeto esta localizado em src\atividade.mv.db e já possui as tabelas e os dados de testes cadastrados
+
 O banco foi desenvolvido a partir da seguinte URL jdbc:h2:tcp://localhost:9092/C:/Faculdade/src/atividade que para ser reutilizada precisa de adaptações em seu caminho conforme o local onde foi instalado
 ### Elaborar o mapeamento em código Sql para as tabela.
 - Presente no diretorio sql\CREATES.SQL
