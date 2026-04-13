@@ -2,9 +2,9 @@ package facade;
 
 import java.util.List;
 
-import entity.Pessoa;
-
 public class TestaPessoaDAO {
+
+	/*
 	public static void main(String[] args) {
 		Pessoa p = new Pessoa();
 		p.setNome("ANA ANTONIA");
@@ -39,4 +39,5 @@ public class TestaPessoaDAO {
 
 		dao.getEntityManager().close();
 	}
+	*/
 }

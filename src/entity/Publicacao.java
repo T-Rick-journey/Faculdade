@@ -3,6 +3,7 @@ package entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,14 +18,19 @@ public class Publicacao {
 	@GeneratedValue(strategy= GenerationType.AUTO) 	
     private Long id;
 
+    @Column(name = "codigoPublicacao")
     private Integer codigoPublicacao;
 
+    @Column(name = "titulo")
     private String titulo;
 
+    @Column(name = "ano")
     private Integer ano;
 
+    @Column(name = "autor")
     private String autor;
 
+    @Column(name = "tipo")
     private String tipo;
 
     private List<Emprestimo> emprestimos = new ArrayList<>();

@@ -1,7 +1,8 @@
 package entity;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -22,11 +23,13 @@ public class Emprestimo {
 	@GeneratedValue(strategy= GenerationType.AUTO) 	
     private Long id;
 
+    @Column(name = "dataDevolucao")
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime dataDevolucao;
+    private Date dataDevolucao;
 
+    @Column(name = "dataEmprestimo")
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime dataEmprestimo;
+    private Date dataEmprestimo;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_aluno")
@@ -38,13 +41,13 @@ public class Emprestimo {
 
     public Emprestimo(){}
 
-    public Emprestimo(Long id, LocalDateTime dataDevolucao, LocalDateTime dataEmprestimo) {
+    public Emprestimo(Long id, Date dataDevolucao, Date dataEmprestimo) {
         this.id = id;
         this.dataDevolucao = dataDevolucao;
         this.dataEmprestimo = dataEmprestimo;
     }
 
-    public Emprestimo(Long id, LocalDateTime dataDevolucao, LocalDateTime dataEmprestimo, Aluno aluno,
+    public Emprestimo(Long id, Date dataDevolucao, Date dataEmprestimo, Aluno aluno,
             Publicacao publicacao) {
         this.id = id;
         this.dataDevolucao = dataDevolucao;
@@ -61,19 +64,19 @@ public class Emprestimo {
         this.id = id;
     }
 
-    public LocalDateTime getDataDevolucao() {
+    public Date getDataDevolucao() {
         return dataDevolucao;
     }
 
-    public void setDataDevolucao(LocalDateTime dataDevolucao) {
+    public void setDataDevolucao(Date dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public LocalDateTime getDataEmprestimo() {
+    public Date getDataEmprestimo() {
         return dataEmprestimo;
     }
 
-    public void setDataEmprestimo(LocalDateTime dataEmprestimo) {
+    public void setDataEmprestimo(Date dataEmprestimo) {
         this.dataEmprestimo = dataEmprestimo;
     }
 

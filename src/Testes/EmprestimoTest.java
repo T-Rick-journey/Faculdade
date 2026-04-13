@@ -93,11 +93,11 @@ public class EmprestimoTest {
         }
     }
 
-    private static Long testaInsert(LocalDateTime dataEmprestimo, LocalDateTime dataDevolução) {
+    private static Long testaInsert(LocalDateTime dataEmprestimo, LocalDateTime dataDevolucao) {
         try {
             Emprestimo emprestimo = new Emprestimo(
                     null,
-                    dataDevolução,
+                    dataDevolucao,
                     dataEmprestimo
             );
 

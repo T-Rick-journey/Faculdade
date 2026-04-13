@@ -5,11 +5,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import entity.Pessoa;
 
 public class TestesPessoaDAO {
-
+	/*
 	public static void main(String[] args) {
+		
 		DAO dao = new PessoaDAO();
 		EntityManager em = dao.getEntityManager();
 
@@ -25,7 +25,7 @@ public class TestesPessoaDAO {
                 p.setNome("JOANA DARC");
                 dao.update(p);
                 System.out.println("UPDATE do objeto ID=100 -> CLAUDIO");
-		*/
+		
 
                 // Deletar o objeto Entidade pelo ID =100
                 Pessoa p = (Pessoa) dao.findById(100);
@@ -43,16 +43,16 @@ public class TestesPessoaDAO {
 		em.persist(p);
 		p = new Pessoa(92, "MARIA CARVALHO", "BELÉM", "PA");
 		em.persist(p);
-		p = new Pessoa(93, "PEDRO SILVA", "CAMETÁ", "PA");
+		p = new Pessoa(93, "PEDRO SILVA", "CAMETA", "PA");
 		em.persist(p);
-		p = new Pessoa(94, "LUIZ CARLOS", "SANTARÉM", "PA");
+		p = new Pessoa(94, "LUIZ CARLOS", "SANTAREM", "PA");
 		em.persist(p);
-		p = new Pessoa(95, "JOSÉ SANTOS", "SANTARÉM", "PA");
+		p = new Pessoa(95, "JOSÉ SANTOS", "SANTAREM", "PA");
 		em.persist(p);
-		p = new Pessoa(96, "MÁRIO PONTES", "BELÉM", "PA");
+		p = new Pessoa(96, "MÁRIO PONTES", "BELEM", "PA");
 
 		em.persist(p);
 		transaction.commit();
 	}
-
+	*/
 }

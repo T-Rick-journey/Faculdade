@@ -7,9 +7,9 @@ CREATE TABLE IF NOT EXISTS tb_aluno (
 CREATE TABLE IF NOT EXISTS tb_publicacoes (
 	id SERIAL PRIMARY KEY,
 	titulo VARCHAR(255),
-	codigo_publicacao varchar(255),
+	codigoPublicacao varchar(255),
 	autor VARCHAR(255),
-	ano_publicacao INT,
+	ano INT,
 	tipo varchar(255)
 );
 
@@ -17,8 +17,8 @@ CREATE TABLE IF NOT EXISTS tb_emprestimo (
 	id SERIAL PRIMARY KEY,
 	id_aluno INT,
 	id_publicacao INT,
-	data_emprestimo DATE,
-	data_devolucao DATE,
+	dataEmprestimo DATE,
+	dataDevolucao DATE,
 	FOREIGN KEY (id_aluno) REFERENCES tb_aluno(id),
 	FOREIGN KEY (id_publicacao) REFERENCES tb_publicacoes(id)
 );
