@@ -23,8 +23,8 @@ public class TestFindAll {
             for (Emprestimo emprestimo : emprestimos) {
                 System.out.println(
                           "ID: " + emprestimo.getId()
-                        + " || Empréstimo: " + emprestimo.getDataEmprestimo()
-                        + " || Devolução: " + emprestimo.getDataDevolucao()
+                        + " || Empréstimo: " + TestUtil.formatarData(emprestimo.getDataEmprestimo())
+                        + " || Devolução: " + TestUtil.formatarData(emprestimo.getDataDevolucao())
                         + " || Aluno: " + (emprestimo.getAluno() != null ? emprestimo.getAluno().getNome() : "N/A")
                         + " || Publicação: " + (emprestimo.getPublicacao() != null ? emprestimo.getPublicacao().getTitulo() : "N/A"));
             }
