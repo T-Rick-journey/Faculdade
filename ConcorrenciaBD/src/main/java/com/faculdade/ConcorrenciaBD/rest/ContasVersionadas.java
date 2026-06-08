@@ -1,4 +1,4 @@
-package com.faculdade.rest;
+package com.faculdade.ConcorrenciaBD.rest;
 
 import java.math.BigDecimal;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.faculdade.entidade.ContaBancariaVersionada;
-import com.faculdade.service.ContaVersionadaService;
+import com.faculdade.ConcorrenciaBD.entidade.ContaBancariaVersionada;
+import com.faculdade.ConcorrenciaBD.service.ContaVersionadaService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

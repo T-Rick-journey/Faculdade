@@ -1,25 +1,25 @@
-package com.faculdade.service;
+package com.faculdade.ConcorrenciaBD.service;
 
 import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.faculdade.entidade.ContaBancaria;
-import com.faculdade.repository.ContaBancariaRepository;
+import com.faculdade.ConcorrenciaBD.entidade.ContaBancariaVersionada;
+import com.faculdade.ConcorrenciaBD.repository.ContaBancariaVersionadaRepository;
 
 @Service
-public class ContaBancariaService {
+public class ContaVersionadaService {
     
     @Autowired
-    ContaBancariaRepository repository;
+    ContaBancariaVersionadaRepository repository;
 
-    public ContaBancaria buscarPorNumeroConta(String numeroConta) {
+    public ContaBancariaVersionada buscarPorNumeroConta(String numeroConta) {
         return repository.findByNumeroConta(numeroConta);
     }
 
-    public ContaBancaria depositar(String numeroConta, BigDecimal valor) {
-        ContaBancaria conta = repository.findByNumeroConta(numeroConta);
+    public ContaBancariaVersionada depositar(String numeroConta, BigDecimal valor) {
+        ContaBancariaVersionada conta = repository.findByNumeroConta(numeroConta);
         if (conta == null)
             throw new RuntimeException("Conta não encontrada");
 
@@ -27,8 +27,8 @@ public class ContaBancariaService {
         return repository.save(conta);
     }
 
-    public ContaBancaria sacar(String numeroConta, BigDecimal valor) {
-        ContaBancaria conta = repository.findByNumeroConta(numeroConta);
+    public ContaBancariaVersionada sacar(String numeroConta, BigDecimal valor) {
+        ContaBancariaVersionada conta = repository.findByNumeroConta(numeroConta);
         if (conta == null)
             throw new RuntimeException("Conta não encontrada");
 
@@ -38,5 +38,4 @@ public class ContaBancariaService {
         conta.setSaldo(conta.getSaldo().subtract((valor)));
         return repository.save(conta);
     }
-
 }

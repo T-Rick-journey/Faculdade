@@ -1,12 +1,12 @@
-package com.faculdade.rest;
+package com.faculdade.ConcorrenciaBD.rest;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.faculdade.entidade.ContaBancaria;
-import com.faculdade.service.ContaBancariaService;
+import com.faculdade.ConcorrenciaBD.entidade.ContaBancaria;
+import com.faculdade.ConcorrenciaBD.service.ContaBancariaService;
 
 import java.math.BigDecimal;
 

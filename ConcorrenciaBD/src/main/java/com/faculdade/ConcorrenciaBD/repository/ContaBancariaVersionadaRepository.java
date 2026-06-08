@@ -1,10 +1,10 @@
-package com.faculdade.repository;
+package com.faculdade.ConcorrenciaBD.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.faculdade.entidade.ContaBancariaVersionada;
+import com.faculdade.ConcorrenciaBD.entidade.ContaBancariaVersionada;
 
 @Repository
 public interface ContaBancariaVersionadaRepository extends JpaRepository<ContaBancariaVersionada, Long> {
