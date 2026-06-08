@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,7 +52,11 @@ public class ContasVersionadas {
     @ApiResponse(responseCode = "200", description = "Depósito realizado")
     public ResponseEntity<ContaBancariaVersionada> depositarSemVersao(@PathVariable String numeroConta,
                                                             @RequestParam BigDecimal valor) {
-        return ResponseEntity.status(HttpStatus.OK).body(service.depositar(numeroConta, valor));
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(service.depositar(numeroConta, valor));
+        } catch (ObjectOptimisticLockingFailureException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+        }
     }
     
     @PostMapping("/{numeroConta}/sacar")
@@ -59,6 +64,10 @@ public class ContasVersionadas {
     @ApiResponse(responseCode = "200", description = "Saque realizado")
     public ResponseEntity<ContaBancariaVersionada> sacarSemVersao(@PathVariable String numeroConta,
                                                         @RequestParam BigDecimal valor) {
-        return ResponseEntity.status(HttpStatus.OK).body(service.sacar(numeroConta, valor));
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(service.sacar(numeroConta, valor));
+        } catch (ObjectOptimisticLockingFailureException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+        }
     }
 }
