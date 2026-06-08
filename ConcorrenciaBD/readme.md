@@ -94,4 +94,16 @@ O console do banco de dados H2 permite visualizar e manipular os dados:
 - [SpringDoc OpenAPI](https://springdoc.org/)
 
 ---
+## Relatório de conclusão
+No teste de carga **sem** controle de versão foram realizadas um total de 10000 requisições, 5000 requisições para o endpoint de saque e 5000 para o endpoint de deposito, cada uma requisição altera em 1 unidade o saldo da conta com um saldo inicial de 10.000, portanto se espera que ao final das requisições o saldo da conta fique inalterado
+![Imagem Local](./jmeter/relatorioOtimista.png)
 
+Ao final das requisições o saldo final foi de 10.037 com 0% da requisições retornando erro, um número superior ao esperado que releva inconsistencia e falta de integridade no valor esperado devido ao alto número de acessos paralelos
+
+![Imagem Local](./jmeter/requisicaoSaqueOtimista.png) ![Imagem Local](./jmeter/requisicaoDepositoOtimista.png)
+
+No teste de carga **com** controle de versão foram realizadas um total de 10000 requisições, 5000 requisições para o endpoint de saque e 5000 para o endpoint de deposito, cada uma requisição altera em 1 unidade o saldo da conta com um saldo inicial de 10.000, portanto se espera que ao final das requisições o saldo da conta fique inalterado
+![Imagem Local](./jmeter/relatorioPessimista.png)
+
+Ao final das requisições o saldo final foi de 9.798 com 47,51% das requisições retornando erro, devido ao fato do controle de versionamento não persistir as alterações ao perceber que outra requisição esta acessando o dado
+![Imagem Local](./jmeter/requisicaoSaquePessimista.png) ![Imagem Local](./jmeter/requisicaoDepositoPessimista.png)
